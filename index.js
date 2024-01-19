@@ -10,7 +10,7 @@ app.use(cors())
 const server = http.createServer(app) // Crea un servidor HTTP usando Express
 const io = new SocketServer(server, {
     cors: {
-        origin: 'http://localhost:5173'
+        origin: ['http://localhost:5173', 'https://socketchatrealtime.netlify.app'], 
     }
 }) // Crea una instancia de SocketServer asociada al servidor HTTP
 

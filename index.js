@@ -8,7 +8,7 @@ const PORT = process.env.PORT ?? 3000
 const app = express()
 const server = http.createServer(app) // Crea un servidor HTTP usando Express
 const io = new SocketServer(server) // Crea una instancia de SocketServer asociada al servidor HTTP
-app.use(cors())
+server.use(cors())
 
 
 // Maneja el evento de cuando alguien se conecta en el servidor de socket.io

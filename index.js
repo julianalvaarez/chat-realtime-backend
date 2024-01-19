@@ -1,14 +1,16 @@
 import express from 'express'
 import http from 'http'
+import cors from 'cors'
 // Importa el módulo Server de socket.io para gestionar conexiones WebSocket
 import {Server as SocketServer} from 'socket.io'
 
 const PORT = process.env.PORT ?? 3000
 const app = express()
+app.use(cors())
 const server = http.createServer(app) // Crea un servidor HTTP usando Express
 const io = new SocketServer(server, {
     cors: {
-        origin: 'https://localhost:5173'
+        origin: 'http://localhost:5173'
     }
 }) // Crea una instancia de SocketServer asociada al servidor HTTP
 

@@ -6,9 +6,9 @@ import {Server as SocketServer} from 'socket.io'
 
 const PORT = process.env.PORT ?? 3000
 const app = express()
+app.use(cors())
 const server = http.createServer(app) // Crea un servidor HTTP usando Express
 const io = new SocketServer(server) // Crea una instancia de SocketServer asociada al servidor HTTP
-server.use(cors())
 
 
 // Maneja el evento de cuando alguien se conecta en el servidor de socket.io
